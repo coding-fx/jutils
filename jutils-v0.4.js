@@ -93,7 +93,7 @@ class myJutils {
 }
 
  bind() {
- return this.element;
+ return this.check || this.element;
 }
  
     at(index = 0) {  
