@@ -92,7 +92,7 @@ class myJutils {
   }
 }
 
- bind() {
+ proxy() {
  return this.check || this.element;
 }
  
