@@ -2211,20 +2211,22 @@ httpRequest.send(myData);
 $.date = function(flag, set) {
 const request = new Date();
   const prop = request[flag];
-  if (set === undefined) {
+  if (flag !== undefined && set === undefined) {
     if (flag in request) {
       return typeof prop === 'function' ? prop.call(request) : prop;
     } else {
       throw new Error(`Invalid flag: ${flag}`);
     }
-  } else {
+  } else if(flag !== undefined && set !== undefined) {
     if (typeof prop === 'function') {
       prop.call(request, set);
       return request; // return the updated Date object
     } else {
       throw new Error(`Cannot set flag: ${flag}`);
     }
-  }    
+  } else {
+    return request;
+  }
 }
 
 
